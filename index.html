@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tirta Kepri | Linktree</title>
+  <meta name="description" content="Tautan resmi layanan dan informasi Perumda Air Minum Tirta Kepri.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/svg+xml" href="icons/app.svg">
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main Minimalist Linktree Container -->
+  <div class="linktree-container">
+
+    <!-- Top Share Button -->
+    <div class="top-bar">
+      <button id="sharePageBtn" class="top-share-btn" aria-label="Bagikan Halaman" title="Bagikan">
+        <img src="icons/share.svg" alt="Bagikan" class="action-icon-img">
+      </button>
+    </div>
+
+    <!-- Profile Header (Avatar, Title, Bio) -->
+    <header class="profile-header">
+      <div class="avatar-wrap">
+        <img src="icons/app.svg" alt="Logo Tirta Kepri" class="avatar-img">
+      </div>
+
+      <h1 class="profile-title">
+        @tirtakepri
+        <img src="icons/verified.svg" alt="Terverifikasi" class="verified-icon" title="Akun Resmi">
+      </h1>
+
+      <p class="profile-bio">Perumda Air Minum Tirta Kepri<br>Penyedia Layanan Air Bersih Provinsi Kepulauan Riau</p>
+
+      <!-- Minimal Social Icons Row (Images from icons/) -->
+      <div class="social-row">
+        <a href="https://instagram.com/tirtakepri" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link" title="Instagram">
+          <img src="icons/instagram.svg" alt="Instagram" class="social-icon-img">
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link" title="Facebook">
+          <img src="icons/facebook.svg" alt="Facebook" class="social-icon-img">
+        </a>
+        <a href="https://tirtakepri.co.id" target="_blank" rel="noopener noreferrer" aria-label="Website" class="social-link" title="Website Resmi">
+          <img src="icons/globe.svg" alt="Website" class="social-icon-img">
+        </a>
+        <a href="mailto:info@tirtakepri.co.id" aria-label="Email" class="social-link" title="Email">
+          <img src="icons/email.svg" alt="Email" class="social-icon-img">
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Listview of Links (Minimal Linktree Buttons) -->
+    <main class="links-list" id="linksList">
+      <!-- Generated dynamically from script.js using icons from icons/ folder -->
+    </main>
+
+    <!-- Minimalist Footer -->
+    <footer class="profile-footer">
+      <span class="footer-text">Tirta Kepri</span>
+    </footer>
+
+  </div>
+
+  <!-- Toast Message -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Tautan berhasil disalin</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

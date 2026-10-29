@@ -1,0 +1,511 @@
+/* ==========================================================================
+   MINIMALIST LINKTREE - TIRTA KEPRI
+   Clean, authentic, mobile-responsive bio-link layout
+   All icons loaded from the icons/ folder
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --bg-navy: #0f172a;
+  --bg-black: #000000;
+  --bg-gradient: linear-gradient(180deg, #0f172a 0%, #060d1a 50%, #000000 100%);
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --card-hover: rgba(255, 255, 255, 0.13);
+  --card-border: rgba(255, 255, 255, 0.35);
+  --card-border-hover: rgba(255, 255, 255, 0.75);
+  
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --accent-color: #0284c7;
+  --whatsapp-color: #25d366;
+  --wbs-color: #f59e0b;
+
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-pill: 9999px;
+  --radius-btn: 30px;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(180deg, #0f172a 0%, #060d1a 50%, #000000 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 48px 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Centered Container */
+.linktree-container {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top Action Bar (Minimal Share Button) */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.top-share-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.top-share-btn:hover {
+  background: var(--card-hover);
+  border-color: rgba(255, 255, 255, 0.75);
+  transform: scale(1.05);
+}
+
+.action-icon-img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.avatar-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease;
+  background: transparent;
+}
+
+.avatar-wrap:hover {
+  transform: scale(1.04);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.verified-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.profile-bio {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin: 0 auto 16px auto;
+  line-height: 1.4;
+}
+
+/* Social Row */
+.social-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-link {
+  color: var(--text-main);
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.social-icon-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Links List */
+.links-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+/* Minimalist Link Card Button */
+.link-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 18px;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-btn);
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.link-card:hover {
+  transform: translateY(-2px) scale(1.01);
+  background: var(--card-hover);
+  border-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.link-card:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Left Icon */
+.link-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 14px;
+}
+
+.link-icon-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Centered Title Text */
+.link-title {
+  flex: 1;
+  text-align: left;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right 3-dots / share action */
+.link-more-btn {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.link-card:hover .link-more-btn {
+  opacity: 1;
+}
+
+.link-more-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.more-icon-img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Accordion Specific Styling */
+.accordion-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.25s ease;
+  border-radius: 28px;
+}
+
+.accordion-wrapper.open {
+  background: rgba(255, 255, 255, 0.03);
+  padding-bottom: 8px;
+}
+
+.accordion-trigger {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.accordion-wrapper.open .accordion-trigger {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.link-chevron {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.chevron-icon-img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.accordion-wrapper.open .chevron-icon-img {
+  transform: rotate(180deg);
+}
+
+/* Accordion Body / Sub Contacts */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin 0.25s ease;
+  margin-top: 0;
+}
+
+.accordion-wrapper.open .accordion-body {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.sub-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.sub-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sub-contact-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateX(4px);
+}
+
+.sub-contact-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sub-contact-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.sub-contact-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-contact-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.sub-contact-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* WBS Special Accent */
+.sub-contact-card.wbs-item .sub-contact-icon {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sub-contact-card.wbs-item:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.sub-contact-arrow {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.arrow-icon-img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  opacity: 0.6;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sub-contact-card:hover .arrow-icon-img {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+/* Footer */
+.profile-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 12px;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+  z-index: 999;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 16px 12px 36px 12px;
+  }
+
+  .avatar-wrap {
+    width: 88px;
+    height: 88px;
+  }
+
+  .profile-title {
+    font-size: 1.15rem;
+  }
+
+  .profile-bio {
+    font-size: 0.85rem;
+  }
+
+  .link-card {
+    min-height: 52px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .link-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+  }
+
+  .link-icon-img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sub-contact-card {
+    padding: 10px 14px;
+  }
+}
